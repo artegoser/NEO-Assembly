@@ -1,0 +1,26 @@
+{
+  "name": "neo-assembly",
+  "version": "0.1.1",
+  "description": "Assembly for Neutroser N-1",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/artegoser/NEO-Assembly.git"
+  },
+  "bin": {
+    "neasm": "./index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/artegoser/NEO-Assembly/issues"
+  },
+  "homepage": "https://github.com/artegoser/NEO-Assembly#readme",
+  "dependencies": {
+    "commander": "^8.3.0"
+  }
+}
