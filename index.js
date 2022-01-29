@@ -5,6 +5,7 @@ const compiler = require("./compiler");
 const program = new Command();
 program.version(require("./package.json").version);
 
+console.time("Compiled");
 program
   .command("compile <filepath>")
   .description("compiles your assembly code to bytecode")

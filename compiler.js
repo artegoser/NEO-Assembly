@@ -19,12 +19,15 @@ let commandmap = {
 
 function compile(path, opath) {
   let file = fs.readFileSync(path, "utf-8");
+  file += "\n";
+  file = file.replace(/\/\/(.*?)\r?\n/gi, "\n");
   let asmcommands = file.split(/\r?\n/);
   let stream = fs.createWriteStream(opath);
   let commands = [];
   let data = [];
   let addrs = [];
   for (let asmcommand of asmcommands) {
+    if (!asmcommand) continue;
     let [command, datac] = asmcommand.split(" ");
     if (datac[datac.length - 1] === "h") data.push(parseInt(datac, 16));
     else if (datac[datac.length - 1] === "b") data.push(parseInt(datac, 2));
@@ -44,6 +47,7 @@ function compile(path, opath) {
       Buffer.alloc(2, "0".repeat(4 - datastring.length) + datastring, "hex")
     );
   }
+  console.timeEnd("Compiled");
 }
 
 module.exports = compile;

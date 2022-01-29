@@ -1,5 +1,9 @@
+// 1 stage
 load 2
-sum 3
-mul 2
-sub 2
-div 4
+// 2 stage
+sum 3 // 2+3 = 5
+mul 2 // 5*2=10
+sub 2 //10-2 = 8
+div 4 // 8/4 = 2
+
+//total = 2

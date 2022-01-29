@@ -11,3 +11,7 @@ npm i neo-assembly -g
 ```bash
 neasm compile file.neasm -o compiledfile.cneasm
 ```
+
+## Syntax highlighting
+
+Install the vs-code extension from the neo-assembly.vsix file
