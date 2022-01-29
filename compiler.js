@@ -82,10 +82,6 @@ function compile(path, opath) {
       Buffer.alloc(2, "0".repeat(4 - datastring.length) + datastring, "hex")
     );
   }
-  console.log(commands);
-  console.log(data);
-  console.log(addrs);
-  console.log(variables);
   console.timeEnd("Compiled");
 }
 
