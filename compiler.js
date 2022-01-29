@@ -58,7 +58,7 @@ function compile(path, opath) {
 
     if (command !== "set") {
       commands.push(commandmap[command]);
-      if (args[0].endsWith("&")) {
+      if (args[0].endsWith("#")) {
         addrs.push(convertNums(args[0]));
         totalsets += 1;
       } else {

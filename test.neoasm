@@ -1,18 +1,13 @@
 // 1 stage
-set afterMul& 1
-set a& 2
-set total& 1
 
-// 2 stage
-load a&
-sum 3 // 2+3 = 5
-mul 2 // 5*2=10
+set b# 2
+set h# 3
+set answer# 0
 
-//save data after multiplying = 10
-write afterMul&
-sub 2 //10-2 = 8
-div 4 // 8:4 = 2
+//2 stage
 
-//total = 2
-write total&
+load b#
+mul h#
+div 2
 
+write answer#
