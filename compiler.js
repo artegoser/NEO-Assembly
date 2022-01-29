@@ -22,7 +22,7 @@ let variables = {};
 function convertNums(strnum) {
   if (strnum[strnum.length - 1] === "h") return parseInt(strnum, 16);
   else if (strnum[strnum.length - 1] === "b") return parseInt(strnum, 2);
-  else if (strnum[strnum.length - 1] === "&") return variables[strnum];
+  else if (strnum[strnum.length - 1] === "#") return variables[strnum];
   else return parseInt(strnum);
 }
 
