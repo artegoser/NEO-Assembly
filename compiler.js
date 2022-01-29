@@ -43,7 +43,7 @@ function compile(path, opath) {
   let memoryaddr = 0;
   let totalsets = 0;
   for (let i = 0; i < asmcommands.length; i++) {
-    let [command, ...args] = asmcommands[i].split(" ");
+    let [command] = asmcommands[i].split(" ");
     if (command === "set") totalsets += 1;
   }
   for (let i = 0; i < asmcommands.length; i++) {
@@ -58,10 +58,13 @@ function compile(path, opath) {
 
     if (command !== "set") {
       commands.push(commandmap[command]);
-      data.push(convertNums(args[0]));
-
-      if (commands[i] !== 0 || command !== "load")
-        addrs.push(asmcommands.length - totalsets + i - 1);
+      if (args[0].endsWith("&")) {
+        addrs.push(convertNums(args[0]));
+        totalsets += 1;
+      } else {
+        data.push(convertNums(args[0]));
+        addrs.push(asmcommands.length + memoryaddr - totalsets);
+      }
     } else {
       variables[args[0]] = asmcommands.length + memoryaddr - totalsets;
       data.push(convertNums(args[1]));

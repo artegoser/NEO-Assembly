@@ -1,15 +1,18 @@
 // 1 stage
+set afterMul& 1
 set a& 2
-set b& 3
-
-set c& 2
-set d& 3
+set total& 1
 
 // 2 stage
 load a&
 sum 3 // 2+3 = 5
 mul 2 // 5*2=10
+
+//save data after multiplying = 10
+write afterMul&
 sub 2 //10-2 = 8
 div 4 // 8:4 = 2
 
 //total = 2
+write total&
+
