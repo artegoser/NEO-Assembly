@@ -15,6 +15,7 @@ let commandmap = {
   change: 12,
   shr: 13,
   shl: 14,
+  end: 15,
 };
 
 let variables = {};
@@ -47,6 +48,11 @@ function compile(path, opath) {
     if (command === "set") totalsets += 1;
   }
   for (let i = 0; i < asmcommands.length; i++) {
+    if (asmcommands[i] === "end") {
+      commands.push(15);
+      addrs.push(0);
+      continue;
+    }
     let [command, ...args] = asmcommands[i].split(" ");
     args = filtNone(args);
 
