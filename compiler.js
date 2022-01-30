@@ -50,12 +50,6 @@ function compile(path, opath) {
     let [command, ...args] = asmcommands[i].split(" ");
     args = filtNone(args);
 
-    if (command === "load") {
-      commands.push(1);
-      addrs.push(convertNums(args[0]));
-      continue;
-    }
-
     if (command !== "set") {
       commands.push(commandmap[command]);
       if (args[0].endsWith("#")) {
